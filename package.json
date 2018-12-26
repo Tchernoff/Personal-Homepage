@@ -1,0 +1,23 @@
+{
+  "name": "resumepage",
+  "version": "1.0.0",
+  "description": "resumegape",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "node-normalize-scss": "^8.0.0"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Yury Chernov",
+  "license": "ISC"
+}
