@@ -1,2 +1,141 @@
-﻿@import "styles/scss/_reset";
+﻿///////////////////////////////////
+///   IMPORTS
+///////////////////////////////////
 
+@import "styles/scss/_reset";
+
+///////////////////////////////////
+///   VARIABLES
+///////////////////////////////////
+
+
+
+///////////////////////////////////
+///   MIXINS
+///////////////////////////////////
+
+@mixin text_style {
+    color: black;
+    font-family: 'Open Sans';
+    font-size: 18px;
+}
+
+@mixin header-message_style {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+///////////////////////////////////
+///   TEXT STYLE
+///////////////////////////////////
+
+.header-message {
+    @include header-message_style; // color:black, font-family:Open Sans, font-weight:700
+    &_h1 {
+        font-size: 50px;
+    }
+
+    &_h2 {
+        font-size: 25px;
+    }
+
+    &_h3 {
+        font-size: 24px;
+    }
+}
+
+.text {
+    @include text_style; // color:black, font-family:Open Sans, font-size:12
+    font-weight: 400;
+
+    &_bold {
+        @include text_style; // color:black, font-family:Open Sans, font-size:12
+        font-weight: 700;
+    }
+}
+
+
+///////////////////////////////////
+///   PAGE STRUCTURE
+///////////////////////////////////
+
+body {
+    display: grid;
+    background-color: gainsboro;
+
+    .resume-header {
+        text-align: center;
+
+        &__page {
+            margin: 25px 0;
+        }
+
+        .header-message {
+            margin: 15px auto;
+        }
+
+        .text {
+        }
+    }
+
+    .sidebar {
+
+        &__page {
+            margin: 35px 0;
+        }
+
+        &__photo-block {
+            margin-bottom: 60px;
+            .photo {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        &__content-block {
+            margin: 60px 0;
+            padding: 0 8vw;
+
+            .header {
+
+                .header-message {
+                    margin: 20px 0;
+                }
+            }
+
+            .contact-icon {
+                display: inline-block;
+            }
+
+            .text_bold {
+                margin: 7px 0;
+
+                .contact-icon {
+                    margin-right: 10px;
+                    width: 28px;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        .main-section {
+
+            &__page {
+            }
+
+            &__content-block {
+
+                .header {
+
+                    .header-message {
+                    }
+                }
+
+                .text {
+                }
+            }
+        }
+    }
+}
