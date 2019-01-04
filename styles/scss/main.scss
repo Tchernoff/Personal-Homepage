@@ -17,7 +17,7 @@
 @mixin text_style {
     color: black;
     font-family: 'Open Sans';
-    font-size: 18px;
+    font-size: 16px;
 }
 
 @mixin header-message_style {
@@ -30,14 +30,15 @@
 ///   TEXT STYLE
 ///////////////////////////////////
 
-.header-message {
+.content-block__header-message {
     @include header-message_style; // color:black, font-family:Open Sans, font-weight:700
+    
     &_h1 {
         font-size: 50px;
     }
 
     &_h2 {
-        font-size: 25px;
+        font-size: 22px;
     }
 
     &_h3 {
@@ -48,12 +49,53 @@
 .text {
     @include text_style; // color:black, font-family:Open Sans, font-size:12
     font-weight: 400;
+    line-height: 1.2;
 
     &_bold {
         @include text_style; // color:black, font-family:Open Sans, font-size:12
         font-weight: 700;
+        line-height: 1.9;
+    } 
+
+    &_listed {
+        display: flex;
+    }
+
+    &_upper {
+        margin-top: 15px;
     }
 }
+
+///////////////////////////////////
+///   ICONS STYLE
+///////////////////////////////////
+
+.contact-icon {
+    display: inline-block;
+    vertical-align: middle;
+    height: 40px;
+    width: 28px;
+    margin-right: 10px;
+}
+
+.interests-dot-icon {
+    display: inline-block;
+    margin: auto 5px;
+    width: 5px;
+}
+
+.connect-icon {
+    display: inline-block;
+    vertical-align: middle;
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+///////////////////////////////////
+///   TABLE STYLE
+///////////////////////////////////
+
 
 
 ///////////////////////////////////
@@ -61,81 +103,56 @@
 ///////////////////////////////////
 
 body {
-    display: grid;
-    background-color: gainsboro;
+    padding: 0 15px;
 
-    .resume-header {
-        text-align: center;
-
+    .content-block {
         &__page {
-            margin: 25px 0;
+            padding: 35px 0;
         }
 
-        .header-message {
-            margin: 15px auto;
-        }
+        &:nth-child(1) { // ---------------------> RESUME HEADER STYLE
+            .content-block__header-message {
+                line-height: 43px;
+            }
 
-        .text {
-        }
-    }
-
-    .sidebar {
-
-        &__page {
-            margin: 35px 0;
-        }
-
-        &__photo-block {
-            margin-bottom: 60px;
-            .photo {
-                display: block;
-                margin: 0 auto;
+            .text {
+                margin-top: 2px;
             }
         }
 
-        &__content-block {
-            margin: 60px 0;
-            padding: 0 8vw;
-
-            .header {
-
-                .header-message {
-                    margin: 20px 0;
-                }
-            }
-
-            .contact-icon {
-                display: inline-block;
-            }
-
-            .text_bold {
-                margin: 7px 0;
-
-                .contact-icon {
-                    margin-right: 10px;
-                    width: 28px;
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-            }
+        &__photo {
+            display: block;
+            margin: 0 auto;
         }
 
-        .main-section {
+        &__header {
+            margin-bottom: 15px;
+        }
 
-            &__page {
-            }
+        &__personal-content {
+            display: grid;
+            grid-template-columns: 110px 20px 120px;
+            align-items: center;
+        }
 
-            &__content-block {
+        &__list {
+            height: 100px;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
 
-                .header {
-
-                    .header-message {
-                    }
-                }
-
-                .text {
-                }
+            .content-block__list-item {
+                padding: 0 10px;
             }
         }
     }
+}
+
+@media only screen and (min-width: 40.063em) {      /* min-width 641px, medium screens */ 
+  body {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+
 }
