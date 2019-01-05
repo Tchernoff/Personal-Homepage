@@ -93,21 +93,58 @@
 }
 
 ///////////////////////////////////
-///   TABLE STYLE
+///   GRID-AREAS
 ///////////////////////////////////
+body {
+    .photo {
+        grid-area: photo;
+    }
 
+    .header {
+        grid-area: header;
+    }
 
+    .contact {
+        grid-area: contact;
+    }
+
+    .personal {
+        grid-area: personal;
+    }
+
+    .profile {
+        grid-area: profile;
+    }
+
+    .work {
+        grid-area: work;
+    }
+
+    .education {
+        grid-area: education;
+    }
+
+    .skills {
+        grid-area: skills;
+    }
+
+    .interests {
+        grid-area: interests;
+    }
+
+    .connect {
+        grid-area: connect;
+    }
+}
 
 ///////////////////////////////////
 ///   PAGE STRUCTURE
 ///////////////////////////////////
 
 body {
-    padding: 0 15px;
-
     .content-block {
         &__page {
-            padding: 35px 0;
+            padding: 35px 15px;
         }
 
         &:nth-child(1) { // ---------------------> RESUME HEADER STYLE
@@ -142,17 +179,50 @@ body {
             flex-wrap: wrap;
             flex-direction: column;
 
-            .content-block__list-item {
+            &-item {
                 padding: 0 10px;
             }
         }
     }
 }
 
-@media only screen and (min-width: 40.063em) {      /* min-width 641px, medium screens */ 
-  body {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-  }
+@media only screen and (min-width: 40.063em) {      /* min-width 641px, medium screens */
+    body {
+        display: grid;       // -------------------> TABLET Grid (2 column style)   
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "photo      header" 
+            "personal   contact" 
+            "profile    profile" 
+            "work       work" 
+            "education  education" 
+            "skills     skills" 
+            "interests  connect";
+       
+        .content-block {
+            &__personal-content {
+                grid-template-rows: repeat(4, 39px);        
+            }
+        }
+    }
+    
+}
 
+@media only screen and (min-width: 64.063em) {      /* min-width 1025px, large screens */
+    body {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "photo      header      header" 
+            "contact    profile     profile" 
+            "personal   work        work" 
+            "interests  education   education" 
+            "connect    skills      skills";
+
+        .content-block {
+            &:nth-child(1) {
+                text-align: end;
+            }
+        }
+    }
 }
