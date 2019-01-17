@@ -1,1 +1,216 @@
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before{content:'';content:none}q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}.content-block__header-message{color:#000;font-family:'Open Sans',sans-serif;font-weight:700}.content-block__header-message_h1{font-size:50px}.content-block__header-message_h2{font-size:22px}.content-block__header-message_h3{font-size:24px}.text{color:#000;font-family:'Open Sans';font-size:16px;font-weight:400;line-height:1.2}.text_bold{color:#000;font-family:'Open Sans';font-size:16px;font-weight:700;line-height:1.9}.text_listed{display:-webkit-box;display:-ms-flexbox;display:flex}.text_upper{margin-top:15px}.contact-icon{display:inline-block;vertical-align:middle;height:40px;width:28px;margin-right:10px}.interests-dot-icon{display:inline-block;margin:auto 5px;width:5px}.connect-icon{display:inline-block;vertical-align:middle;height:25px;width:25px;margin-right:10px}body .photo{grid-area:photo}body .header{grid-area:header}body .contact{grid-area:contact}body .personal{grid-area:personal}body .profile{grid-area:profile}body .work{grid-area:work}body .education{grid-area:education}body .skills{grid-area:skills}body .interests{grid-area:interests}body .connect{grid-area:connect}body .content-block__page{padding:35px 15px}body .content-block:nth-child(1) .content-block__header-message{line-height:43px}body .content-block:nth-child(1) .text{margin-top:2px}body .content-block__photo{display:block;margin:0 auto}body .content-block__header{margin-bottom:15px}body .content-block__personal-content{display:grid;grid-template-columns:110px 20px 120px;-webkit-box-align:center;-ms-flex-align:center;align-items:center}body .content-block__list{height:100px;list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}body .content-block__list-item{padding:0 10px}@media only screen and (min-width:40.063em){body{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:auto;grid-template-areas:"photo      header" "personal   contact" "profile    profile" "work       work" "education  education" "skills     skills" "interests  connect"}body .content-block__personal-content{grid-template-rows:repeat(4,39px)}}@media only screen and (min-width:64.063em){body{grid-template-columns:repeat(3,1fr);grid-template-areas:"photo      header      header" "contact    profile     profile" "personal   work        work" "interests  education   education" "connect    skills      skills"}body .content-block:nth-child(1){text-align:end}}
+/*-------------------------------------------------------------
+                           Imports
+-------------------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*-------------------------------------------------------------
+                           Mixins
+-------------------------------------------------------------*/
+/*-------------------------------------------------------------
+                         Font Style
+-------------------------------------------------------------*/
+i {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px; }
+
+.content-block__header-message_h1 {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 50px; }
+
+.content-block__header-message_h2 {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 30px; }
+
+.text {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  line-height: 1.56; }
+  .text_bold {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.9; }
+  .text_listed {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .text_uppercase {
+    margin-top: 30px; }
+
+/*-------------------------------------------------------------
+                      Separating SVG Line
+-------------------------------------------------------------*/
+.svg-line {
+  margin-bottom: 30px; }
+
+/*-------------------------------------------------------------
+                          Grid Areas
+-------------------------------------------------------------*/
+.content-block__name {
+  grid-area: header; }
+
+.content-block__contact {
+  grid-area: contact; }
+
+.content-block__personal {
+  grid-area: personal; }
+
+.content-block__profile {
+  grid-area: profile; }
+
+.content-block__work {
+  grid-area: work; }
+
+.content-block__education {
+  grid-area: education; }
+
+.content-block__skills {
+  grid-area: skills; }
+
+.content-block__interests {
+  grid-area: interests; }
+
+.content-block__connect {
+  grid-area: connect; }
+
+/*-------------------------------------------------------------
+                         Page Structure
+-------------------------------------------------------------*/
+body .content-block {
+  padding: 25px 20px 20px 25px; }
+  body .content-block__header {
+    margin-bottom: 30px; }
+  body .content-block__name .photo {
+    padding-bottom: 20px; }
+  body .content-block__contact p img {
+    margin-right: 20px; }
+  body .content-block__contact p:nth-child(3) {
+    padding-left: 1px; }
+  body .content-block__contact p:nth-child(6) {
+    padding-left: 4px; }
+  body .content-block__personal-content {
+    display: grid;
+    grid-template-columns: 120px 15px 180px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  body .content-block__skills .content-block__list {
+    height: 150px;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    body .content-block__skills .content-block__list-item {
+      padding-right: 10px; }
+  body .content-block__connect p img {
+    margin-right: 20px; }
+  body .content-block__connect p:nth-child(4) {
+    padding-left: 5px; }
+    body .content-block__connect p:nth-child(4) img {
+      margin-right: 25px; }
+
+/*-------------------------------------------------------------
+      Breaking Point (interests content split in 2 columns)
+-------------------------------------------------------------*/
+@media only screen and (min-width: 500px) {
+  body .content-block__interests .content-block__list {
+    height: 200px;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; } }
+
+/*-------------------------------------------------------------
+                  Breaking Point (TABLETS)
+-------------------------------------------------------------*/
+@media only screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "header     header"  "personal   contact"  "profile    profile"  "work       work"  "education  education"  "skills     skills"  "interests  connect"; }
+    body .content-block {
+      padding: 35px 30px 30px 35px; }
+      body .content-block__name {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        body .content-block__name .photo {
+          margin-right: 50px; } }
+
+/*-------------------------------------------------------------
+                   Breaking Point (DESKTOP)
+-------------------------------------------------------------*/
+@media only screen and (min-width: 992px) {
+  body {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "header     header      header"  "contact    profile     profile"  "personal   work        work"  "personal   work        work"  "interests  work        work"  "interests  education   education" "connect    education   education" "connect    skills      skills"; }
+    body .content-block {
+      padding: 40px 40px 40px 60px; } }

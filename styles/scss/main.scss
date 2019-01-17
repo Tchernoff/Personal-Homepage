@@ -1,228 +1,287 @@
-﻿///////////////////////////////////
-///   IMPORTS
-///////////////////////////////////
+﻿/*-------------------------------------------------------------
+                           Imports
+-------------------------------------------------------------*/
 
 @import "styles/scss/_reset";
 
-///////////////////////////////////
-///   VARIABLES
-///////////////////////////////////
-
-
-
-///////////////////////////////////
-///   MIXINS
-///////////////////////////////////
+/*-------------------------------------------------------------
+                           Mixins
+-------------------------------------------------------------*/
 
 @mixin text_style {
     color: black;
-    font-family: 'Open Sans';
-    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
 }
 
 @mixin header-message_style {
     color: black;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
-///////////////////////////////////
-///   TEXT STYLE
-///////////////////////////////////
+@mixin content-block_padding_mobile {
+    padding: 25px 20px 20px 25px;
+}
+
+@mixin content-block_padding_tablet {
+    padding: 35px 30px 30px 35px;
+}
+
+@mixin content-block_padding_desktop {
+    padding: 40px 40px 40px 60px;
+}
+
+/*-------------------------------------------------------------
+                         Font Style
+-------------------------------------------------------------*/
+
+i {
+    @include text_style;
+}
 
 .content-block__header-message {
-    @include header-message_style; // color:black, font-family:Open Sans, font-weight:700
-    
+
     &_h1 {
+        @include header-message_style;
         font-size: 50px;
     }
 
     &_h2 {
-        font-size: 22px;
-    }
-
-    &_h3 {
-        font-size: 24px;
+        @include header-message_style;
+        font-size: 30px;
+        //letter-spacing: 2.5px;
     }
 }
 
 .text {
-    @include text_style; // color:black, font-family:Open Sans, font-size:12
+    @include text_style;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 28px;
+    line-height: 1.56;
 
     &_bold {
-        @include text_style; // color:black, font-family:Open Sans, font-size:12
-        font-weight: 700;
+        @include text_style; 
+        font-weight: 600;
         line-height: 1.9;
-    } 
+    }
 
     &_listed {
+        @include text_style;
+        line-height: 50px;
         display: flex;
+        align-items: center;
     }
 
-    &_upper {
-        margin-top: 15px;
-    }
-}
-
-///////////////////////////////////
-///   ICONS STYLE
-///////////////////////////////////
-
-.contact-icon {
-    display: inline-block;
-    vertical-align: middle;
-    height: 40px;
-    width: 28px;
-    margin-right: 10px;
-}
-
-.interests-dot-icon {
-    display: inline-block;
-    margin: auto 5px;
-    width: 5px;
-}
-
-.connect-icon {
-    display: inline-block;
-    vertical-align: middle;
-    height: 25px;
-    width: 25px;
-    margin-right: 10px;
-}
-
-///////////////////////////////////
-///   GRID-AREAS
-///////////////////////////////////
-body {
-    .photo {
-        grid-area: photo;
-    }
-
-    .header {
-        grid-area: header;
-    }
-
-    .contact {
-        grid-area: contact;
-    }
-
-    .personal {
-        grid-area: personal;
-    }
-
-    .profile {
-        grid-area: profile;
-    }
-
-    .work {
-        grid-area: work;
-    }
-
-    .education {
-        grid-area: education;
-    }
-
-    .skills {
-        grid-area: skills;
-    }
-
-    .interests {
-        grid-area: interests;
-    }
-
-    .connect {
-        grid-area: connect;
+    &_uppercase {
+        margin-top: 30px;
     }
 }
 
-///////////////////////////////////
-///   PAGE STRUCTURE
-///////////////////////////////////
+/*-------------------------------------------------------------
+                      Separating SVG Line
+-------------------------------------------------------------*/
 
+.svg-line {
+   margin-bottom: 30px;
+}
+
+
+/*-------------------------------------------------------------
+                          Grid Areas
+-------------------------------------------------------------*/
+
+
+.content-block__name {
+    grid-area: header;
+}
+
+.content-block__contact {
+    grid-area: contact;
+}
+
+.content-block__personal {
+    grid-area: personal;
+}
+
+.content-block__profile {
+    grid-area: profile;
+}
+
+.content-block__work {
+    grid-area: work;
+}
+
+.content-block__education {
+    grid-area: education;
+}
+
+.content-block__skills {
+    grid-area: skills;
+}
+
+.content-block__interests {
+    grid-area: interests;
+}
+
+.content-block__connect {
+    grid-area: connect;
+}
+/*-------------------------------------------------------------
+                         Page Structure
+-------------------------------------------------------------*/
 body {
     .content-block {
-        &__page {
-            padding: 35px 15px;
-        }
-
-        &:nth-child(1) { // ---------------------> RESUME HEADER STYLE
-            .content-block__header-message {
-                line-height: 43px;
-            }
-
-            .text {
-                margin-top: 2px;
-            }
-        }
-
-        &__photo {
-            display: block;
-            margin: 0 auto;
-        }
+        @include content-block_padding_mobile;
 
         &__header {
-            margin-bottom: 15px;
+            margin-bottom: 30px;
         }
 
-        &__personal-content {
-            display: grid;
-            grid-template-columns: 110px 20px 120px;
-            align-items: center;
+        &__name {
+
+            .photo {
+                padding-bottom: 20px;
+            }
         }
 
-        &__list {
-            height: 100px;
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
+        &__contact {
+            p {
+                img {
+                    margin-right: 20px;
+                }
+            }
+            p:nth-child(3) {
+                padding-left: 1px;
+            }
 
-            &-item {
-                padding: 0 10px;
+            p:nth-child(6) {
+                padding-left: 4px;
+            }
+        }
+
+        &__personal {
+
+            &-content {
+                display: grid;
+                grid-template-columns: 120px 15px 180px;
+                align-items: center;
+            }
+        }
+
+        &__skills {
+
+            .content-block__list {
+                height: 150px;
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+
+                &-item {
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        &__connect {
+
+            p {
+
+                img {
+                    margin-right: 20px;
+                }
+            }
+            p:nth-child(4) {
+
+                padding-left: 5px;
+                img {
+                    margin-right:25px;
+                }
+                
             }
         }
     }
 }
 
-@media only screen and (min-width: 40.063em) {      /* min-width 641px, medium screens */
+/*-------------------------------------------------------------
+      Breaking Point (interests content split in 2 columns)
+-------------------------------------------------------------*/
+
+@media only screen and (min-width: 500px) {
     body {
-        display: grid;       // -------------------> TABLET Grid (2 column style)   
+
+        .content-block {
+
+            &__interests {
+
+                .content-block__list {
+                    height: 200px;
+                    list-style: none;
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+/*-------------------------------------------------------------
+                  Breaking Point (TABLETS)
+-------------------------------------------------------------*/
+
+@media only screen and (min-width: 768px) {
+    body {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         grid-template-areas: 
-            "photo      header" 
+            "header     header" 
             "personal   contact" 
             "profile    profile" 
             "work       work" 
             "education  education" 
             "skills     skills" 
             "interests  connect";
-       
+
         .content-block {
-            &__personal-content {
-                grid-template-rows: repeat(4, 39px);        
+            @include content-block_padding_tablet;
+
+            &__name {
+                display: flex;
+                align-items: center;
+
+                .photo {
+                    margin-right: 50px;
+                }
             }
         }
     }
-    
 }
 
-@media only screen and (min-width: 64.063em) {      /* min-width 1025px, large screens */
+/*-------------------------------------------------------------
+                   Breaking Point (DESKTOP)
+-------------------------------------------------------------*/
+
+@media only screen and (min-width: 992px) {
     body {
+        margin: 0 auto;
+        max-width: 1200px;
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
-            "photo      header      header" 
+            "header     header      header" 
             "contact    profile     profile" 
             "personal   work        work" 
-            "interests  education   education" 
+            "personal   work        work" 
+            "interests  work        work" 
+            "interests  education   education"
+            "connect    education   education"
             "connect    skills      skills";
 
         .content-block {
-            &:nth-child(1) {
-                text-align: end;
-            }
+            @include content-block_padding_desktop;
         }
     }
 }

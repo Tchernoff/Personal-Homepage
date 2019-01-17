@@ -32,7 +32,7 @@ gulp.task('css', function () {
         .pipe(autoprefixer({
             browsers: ['last 5 version', 'ie 8'],
             cascade: false}))
-        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        // .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.reload({stream:true}));
 });
