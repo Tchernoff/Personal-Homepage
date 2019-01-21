@@ -1,5 +1,5 @@
 ## Personal-Homepage
-This little project is an example for my code progress/style. For now its just an single resume page, but i will constantly work on it. And build personal homepage with my works, codeexsamples, finished courses ect.
+This little project is an example for my code progress/style. For now its just an single resume page, but i will constantly work on it.
 
 ## Right now u can find here
 
